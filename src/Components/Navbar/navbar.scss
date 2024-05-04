@@ -10,10 +10,10 @@
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
   --whiteColorDeam: hsl(0, 0%, 93%);
-  --greyText: hsl(190, 190, 190);
-  --inputColor: hsl(239, 239, 239);
-  --bodyColor: hsl(240, 240, 246);
-  --cardBG: hsl(225, 225, 235);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
 }
 
 .header {
@@ -63,7 +63,7 @@
         margin: auto;
         padding: 0.5rem 0;
 
-        .navItem {
+        .navItems {
           padding: 0.5rem 0;
 
           .navLink {
@@ -111,5 +111,64 @@
     &:hover {
       color: var(--SecondaryColor);
     }
+  }
+}
+
+//media queries
+@media screen and (min-width: 769px) {
+  .toggleNavbar,
+  .closeNavbar {
+    display: none;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+
+    .navBar {
+      .navLists {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        .navItems {
+          .navLink {
+            color: var(--textColor);
+            padding: 0 0.45rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+
+            &:hover {
+              color: var(--PrimaryColor);
+            }
+          }
+        }
+
+        .btn {
+          margin-left: 1rem;
+          a {
+            color: var(--whiteColor);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .header {
+    .navBar {
+      .navLists {
+        .navItems {
+          padding: 0 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .header {
+    padding: 1rem 8.5rem;
   }
 }
